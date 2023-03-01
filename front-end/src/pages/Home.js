@@ -25,11 +25,19 @@ const Home = () => {
                 console.log('totalAmount function: adding', iterationAmountQ, 'to total' )
                 const iterationAmountQF = iterationAmountQ.slice(1)
                 console.log('formatted iteration amount precalc: ',iterationAmountQF)
+                const iterationAmountQF_joined = iterationAmountQF.join("")
+                console.log(iterationAmountQF_joined)
+                const iterationNumber = parseFloat(iterationAmountQF_joined)
+                console.log(iterationNumber)
             } else {
                 const iterationAmountQ = transaction.amount.split('')
                 console.log('totalAmount function: negating', iterationAmountQ, 'to total' )
                 const iterationAmountQF = iterationAmountQ.slice(2)
                 console.log('formatted iteration amount precalc: ',iterationAmountQF)
+                const iterationAmountQF_joined = iterationAmountQF.join("")
+                console.log(iterationAmountQF_joined)
+                const iterationNumber = parseFloat(iterationAmountQF_joined)
+                console.log(iterationNumber)
             }
         }
         return totalAmountCalc
