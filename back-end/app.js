@@ -2,6 +2,7 @@
 const cors = require("cors")
 const express = require('express')
 const morgan = require("morgan")
+const transactionsController = require('./controllers/transactionsController')
 const { PORT, CLIENT_URL } = require('./constants')
 
 // CONFIGURATION
@@ -13,6 +14,7 @@ app.use(morgan("tiny"))
 app.use(cors({ origin: CLIENT_URL, credentials: true}))
 
 // CONTROLLERS
+app.use("/transactions", transactionsController)
 
 // ROUTES
 app.get("/", (req, res) => {

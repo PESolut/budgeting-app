@@ -3,7 +3,9 @@ const transactions = express.Router()
 
 // validations import here
 
-// queries imports here
+const { 
+    getAllTransactions
+} = require("../queries/transactions")
 
 // INDEX
 transactions.get("/", async ( req, res) => {
@@ -14,3 +16,5 @@ transactions.get("/", async ( req, res) => {
         res.status(500).json({ error: "server error"})
     }
 })
+
+module.exports = transactions
