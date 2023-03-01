@@ -20,11 +20,16 @@ const Home = () => {
         let totalAmountCalc = 0
         for (const transaction of transactions) {
             // totalAmountCalc += transaction.amount
-            console.log(transaction.amount.split(''))
             if (transaction.amount.split('')[0] != '-') {
-                console.log('additive')
+                const iterationAmountQ = transaction.amount.split('')
+                console.log('totalAmount function: adding', iterationAmountQ, 'to total' )
+                const iterationAmountQF = iterationAmountQ.slice(1)
+                console.log('formatted iteration amount precalc: ',iterationAmountQF)
             } else {
-                console.log('negative')
+                const iterationAmountQ = transaction.amount.split('')
+                console.log('totalAmount function: negating', iterationAmountQ, 'to total' )
+                const iterationAmountQF = iterationAmountQ.slice(2)
+                console.log('formatted iteration amount precalc: ',iterationAmountQF)
             }
         }
         return totalAmountCalc
