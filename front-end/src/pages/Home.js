@@ -15,6 +15,24 @@ const Home = () => {
     },[])
     console.log('Home Page transactions object useState ( initail pageload get request )',transactions)
 
+    // total amount
+    const totalAmount = (transactions) => {
+        let totalAmountCalc = 0
+        for (const transaction of transactions) {
+            // totalAmountCalc += transaction.amount
+            console.log(transaction.amount.split(''))
+            if (transaction.amount.split('')[0] != '-') {
+                console.log('additive')
+            } else {
+                console.log('negative')
+            }
+        }
+        return totalAmountCalc
+    }
+
+    totalAmount(transactions)
+   
+
     return (
         <div>
             <h2>Home Page!</h2>
