@@ -29,6 +29,10 @@ const Home = () => {
                 console.log(iterationAmountQF_joined)
                 const iterationNumber = parseFloat(iterationAmountQF_joined)
                 console.log(iterationNumber)
+                totalAmountCalc += iterationNumber
+                console.log(totalAmountCalc)
+                let with2Decimals = totalAmountCalc.toString().match(/^-?\d+(?:\.\d{0,2})?/)[0]
+                console.log(with2Decimals)
             } else {
                 const iterationAmountQ = transaction.amount.split('')
                 console.log('totalAmount function: negating', iterationAmountQ, 'to total' )
@@ -38,18 +42,27 @@ const Home = () => {
                 console.log(iterationAmountQF_joined)
                 const iterationNumber = parseFloat(iterationAmountQF_joined)
                 console.log(iterationNumber)
+                totalAmountCalc -= iterationNumber
+                console.log(totalAmountCalc)
+                let with2Decimals = totalAmountCalc.toString().match(/^-?\d+(?:\.\d{0,2})?/)[0]
+                console.log(with2Decimals)
             }
         }
-        return totalAmountCalc
+        let with2Decimals = totalAmountCalc.toString().match(/^-?\d+(?:\.\d{0,2})?/)[0]
+        console.log(with2Decimals)
+        return with2Decimals
     }
 
-    totalAmount(transactions)
+    const totalVar = totalAmount(transactions)
+    console.log(totalVar)
+    
    
 
     return (
         <div>
             <h2>Home Page!</h2>
             <br/>
+            <h3>Total: ${totalVar}</h3>
             <TransactionsView transactions={transactions}/>
         </div>
     );
