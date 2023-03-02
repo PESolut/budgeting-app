@@ -23,14 +23,20 @@ const TransactionsForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(transaction); // Replace with code to handle form submission
+    if (transaction.amount >= 1000){
+        alert('Transaction amount must be less then 1000')
+    } else {
+         console.log(transaction); // Replace with code to handle form submission
     axios
         .post(`${API}/transactions`, transaction)
         .then(() => {
             console.log('transaction posted')
         })
         .catch((error) => console.log(error))
-        navigate('/')
+        window.location.reload()
+        navigate('/') 
+    }
+  
 
   };
 

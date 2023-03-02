@@ -48,12 +48,20 @@ const TransactionsViewCardDetails = ({
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    try {
+    console.log(formData)
+
+    if (formData.amount >= 1000){
+        alert('Transaction amount must be less then 1000')
+    } else {
+         try {
       await axios.put(`${API}/transactions/${transactionID}`, formData);
       window.location.reload();
     } catch (error) {
       console.log(error);
+    }   
     }
+
+
   };
 
   return (
