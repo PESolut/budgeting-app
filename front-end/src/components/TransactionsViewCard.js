@@ -5,7 +5,7 @@ const TransactionsViewCard = ({ transaction }) => {
   const [showDetails, setShowDetails] = useState(false);
 
   const { item_name, amount, date, sender, category } = transaction;
-
+  const transactionID = transaction.id
   const handleClick = () => {
     setShowDetails(!showDetails);
   };
@@ -24,6 +24,7 @@ const TransactionsViewCard = ({ transaction }) => {
           date={date}
           sender={sender}
           category={category}
+          transactionID={transactionID}
         />
       )}
     </li>
