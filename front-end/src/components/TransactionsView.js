@@ -10,7 +10,13 @@ const TransactionsView = ({ transactions }) => {
       <h3>Transactions</h3>
       <ul className="transactions-view-list">
         {sortedTransactions.map((transaction) => (
-          <TransactionsViewCard key={transaction.id} transaction={transaction} />
+          <TransactionsViewCard
+            key={transaction.id}
+            transaction={{
+              ...transaction,
+              date: new Date(transaction.date).toLocaleDateString(),
+            }}
+          />
         ))}
       </ul>
     </div>
