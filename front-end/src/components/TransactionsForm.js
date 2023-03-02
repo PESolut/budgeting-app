@@ -86,10 +86,11 @@ const TransactionsForm = () => {
           value={transaction.category}
           onChange={handleChange}
         >
-          <option value="food">Food</option>
-          <option value="housing">Housing</option>
-          <option value="transportation">Transportation</option>
-          <option value="entertainment">Entertainment</option>
+            <option value="income">Income</option>
+            <option value="food">Food</option>
+            <option value="housing">Housing</option>
+            <option value="transportation">Transportation</option>
+            <option value="entertainment">Entertainment</option>
         </select>
 
         <button type="submit">Submit</button>
